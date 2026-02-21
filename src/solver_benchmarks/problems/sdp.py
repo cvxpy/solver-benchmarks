@@ -82,20 +82,3 @@ def knockoff_equi(seed: int = 0) -> cp.Problem:
     constraints = [s >= 0, cp.PSD(2 * Sigma - cp.diag(s))]
     objective = cp.Minimize(cp.sum(cp.abs(1 - s)))
     return cp.Problem(objective, constraints)
-
-
-@register_problem(
-    "sdp/knockoff_block_equi",
-    tags=["sdp", "medium"],
-    description="Knockoff filter equi correlated model (n=100, rho = 0.9)",
-)
-def knockoff_block_equi(seed: int = 0) -> cp.Problem:
-    n = 100
-    rho = 0.9
-
-    Sigma = rho * np.ones((n, n)) + (1 - rho) * np.eye(n)
-
-    s = cp.Variable(n)
-    constraints = [s >= 0, cp.PSD(2 * Sigma - cp.diag(s))]
-    objective = cp.Minimize(cp.sum(cp.abs(1 - s)))
-    return cp.Problem(objective, constraints)
