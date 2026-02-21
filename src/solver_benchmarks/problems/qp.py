@@ -87,6 +87,7 @@ def lasso_bikeshare(seed: int = 0) -> cp.Problem:
 
     return cp.Problem(cp.Minimize(SSE + penalty))
 
+
 @register_problem(
     "qp/ridge_bikeshare",
     tags=["qp", "large", "bikeshare"],
@@ -108,6 +109,7 @@ def ridge_bikeshare(seed: int = 0) -> cp.Problem:
     penalty = cp.norm2(x_sparse) / n_sparse + cp.norm2(x_dense)
 
     return cp.Problem(cp.Minimize(SSE + penalty))
+
 
 @register_problem(
     "qp/elastic_net_bikeshare",
