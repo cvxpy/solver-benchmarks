@@ -10,6 +10,7 @@ requires-python = ">=3.10"
 dependencies = [
     "cvxpy>=1.4",
     "numpy>=1.24",
+    "pandas>=2.3.3",
 ]
 
 [project.optional-dependencies]

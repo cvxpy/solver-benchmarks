@@ -1517,6 +1517,8 @@ dependencies = [
     { name = "cvxpy", version = "1.8.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "pandas", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
 
 [package.optional-dependencies]
@@ -1534,6 +1536,7 @@ requires-dist = [
     { name = "cvxpy", specifier = ">=1.4" },
     { name = "matplotlib", marker = "extra == 'analysis'" },
     { name = "numpy", specifier = ">=1.24" },
+    { name = "pandas", specifier = ">=2.3.3" },
     { name = "pandas", marker = "extra == 'analysis'" },
     { name = "pytest", marker = "extra == 'dev'" },
 ]
