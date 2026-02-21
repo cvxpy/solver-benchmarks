@@ -83,6 +83,7 @@ def knockoff_equi(seed: int = 0) -> cp.Problem:
     objective = cp.Minimize(cp.sum(cp.abs(1 - s)))
     return cp.Problem(objective, constraints)
 
+
 @register_problem(
     "sdp/knockoff_block_equi",
     tags=["sdp", "medium"],
@@ -98,4 +99,3 @@ def knockoff_block_equi(seed: int = 0) -> cp.Problem:
     constraints = [s >= 0, cp.PSD(2 * Sigma - cp.diag(s))]
     objective = cp.Minimize(cp.sum(cp.abs(1 - s)))
     return cp.Problem(objective, constraints)
-
