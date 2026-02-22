@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from typing import Callable
 
 import cvxpy as cp
-
+from .finance_NCM import NearestCorrelationMatrix
 
 @dataclass
 class ProblemSpec:
@@ -68,3 +68,4 @@ def get_problem(name: str) -> ProblemSpec:
     """Look up a problem by name."""
     _discover()
     return _REGISTRY[name]
+
