@@ -1,7 +1,7 @@
 import numpy as np
 import cvxpy as cp
 
-from . import register_problem
+from solver_benchmarks.problems import register_problem
 
 
 @register_problem(
